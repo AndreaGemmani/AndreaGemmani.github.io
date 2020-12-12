@@ -281,7 +281,8 @@ var handlerPassaggioDati = function() {
 		let arrAnal = [];
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
+			// return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
+			return b[b.length-1].totale_casi - a[a.length-1].totale_casi;
 		})
 
 		for(let i = 0; i < smMDjson.arrProvinceDivise.length; i++) { 
@@ -310,7 +311,8 @@ var handlerPassaggioDati = function() {
 		let arrAnal = [];
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[a.length-1].nuovi_positivi < b[b.length-1].nuovi_positivi;
+			// return a[a.length-1].nuovi_positivi < b[b.length-1].nuovi_positivi;
+			return b[b.length-1].nuovi_positivi - a[a.length-1].nuovi_positivi;
 		})
 
 		for(let i = 0; i < smMDjson.arrProvinceDivise.length; i++) { 
@@ -345,8 +347,10 @@ var handlerPassaggioDati = function() {
 		smMDjson.arrRegioniDivise.sort((a,b) => {
 			// return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
 			// return 	(a[0] ? a[a.length-1].totale_casi : 0) < (b[0] ? b[b.length-1].totale_casi : 0);
-			return 	(a.length ? a[a.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento)) 
-				<	(b.length ? b[b.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento));
+			// return 	(a.length ? a[a.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento)) 
+			// 	<	(b.length ? b[b.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento));
+			return 	(b.length ? b[b.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento)) - 
+					(a.length ? a[a.length-1].totale_casi : (tdCasiBolzano + tdCasiTrento));
 		})
 
 		for(let i = 0; i < smMDjson.arrRegioniDivise.length; i++) {
@@ -384,14 +388,16 @@ var handlerPassaggioDati = function() {
 		let smMDjson = Cov.dataLoadedObj.dati_json;
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[0].codice_provincia > b[0].codice_provincia;
+			// return a[0].codice_provincia > b[0].codice_provincia;
+			return a[0].codice_provincia - b[0].codice_provincia;
 		})
 	}
 	this.sortProvByNome = function() {
 		let smMDjson = Cov.dataLoadedObj.dati_json;
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[0].denominazione_provincia > b[0].denominazione_provincia;
+			// return a[0].denominazione_provincia > b[0].denominazione_provincia;
+			return a[0].denominazione_provincia - b[0].denominazione_provincia;
 		})
 	}
 	this.sortProvByTotCasiToday = function() {
@@ -407,7 +413,8 @@ var handlerPassaggioDati = function() {
 		// province hanno molti meno giorni, credo siano partite più tardi o abbiano smesso di aggiornarle
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
+			// return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
+			return b[b.length-1].totale_casi - a[a.length-1].totale_casi;
 		})
 
 		// for(let i = 0; i < smMDjson.arrProvinceDivise.length; i++) {
@@ -420,7 +427,8 @@ var handlerPassaggioDati = function() {
 		let smMDjson = Cov.dataLoadedObj.dati_json;
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
-			return a[a.length-1].nuovi_positivi < b[b.length-1].nuovi_positivi;
+			// return a[a.length-1].nuovi_positivi < b[b.length-1].nuovi_positivi;
+			return b[b.length-1].nuovi_positivi - a[a.length-1].nuovi_positivi;
 		})
 	}
 	this.sortProvByRegione = function() {
@@ -430,8 +438,10 @@ var handlerPassaggioDati = function() {
 			if( a[0].denominazione_provincia.includes("In fase") ) return 1;
 			if( a[0].denominazione_provincia.includes("Fuori") ) return 1;
 			if( a[0].denominazione_regione == b[0].denominazione_regione )
-				return a[0].denominazione_provincia > b[0].denominazione_provincia;
-			return a[0].denominazione_regione > b[0].denominazione_regione;
+				// return a[0].denominazione_provincia > b[0].denominazione_provincia;
+				return a[0].denominazione_provincia - b[0].denominazione_provincia;
+			// return a[0].denominazione_regione > b[0].denominazione_regione;
+			return a[0].denominazione_regione - b[0].denominazione_regione;
 		})
 	}
 
@@ -443,7 +453,8 @@ var handlerPassaggioDati = function() {
 
 		smMDjson.arrRegioniDivise.sort((a,b) => { // modifiche per Trentino [4]
 			// return a[0].codice_regione > b[0].codice_regione;
-			return (a[0] ? a[0].codice_regione : 4) > (b[0] ? b[0].codice_regione : 4);
+			// return (a[0] ? a[0].codice_regione : 4) > (b[0] ? b[0].codice_regione : 4);
+			return (a[0] ? a[0].codice_regione : 4) - (b[0] ? b[0].codice_regione : 4);
 		})
 	}
 	this.sortRegByNome = function() {
@@ -451,7 +462,8 @@ var handlerPassaggioDati = function() {
 
 		smMDjson.arrRegioniDivise.sort((a,b) => { // modifiche per Trentino
 			// return a[0].denominazione_regione > b[0].denominazione_regione;
-			return (a[0] ? a[0].denominazione_regione : "Trentino") > (b[0] ? b[0].denominazione_regione : "Trentino");
+			// return (a[0] ? a[0].denominazione_regione : "Trentino") > (b[0] ? b[0].denominazione_regione : "Trentino");
+			return (a[0] ? a[0].denominazione_regione : "Trentino") - (b[0] ? b[0].denominazione_regione : "Trentino");
 		})
 	}
 	this.sortRegByTotCasiToday = function() {
@@ -465,8 +477,8 @@ var handlerPassaggioDati = function() {
 		smMDjson.arrRegioniDivise.sort((a,b) => { // modifiche per Trentino come somma di casi Bolzano e Trento
 			// return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
 			// return 	(a[0] ? a[a.length-1].totale_casi : 0) < (b[0] ? b[b.length-1].totale_casi : 0);
-			return 	(a[0] ? a[a.length-1].totale_casi : tdCasiBolzano + tdCasiTrento) 
-				<	(b[0] ? b[b.length-1].totale_casi : tdCasiBolzano + tdCasiTrento);
+			return 	(b[0] ? b[b.length-1].totale_casi : tdCasiBolzano + tdCasiTrento) -
+					(a[0] ? a[a.length-1].totale_casi : tdCasiBolzano + tdCasiTrento);
 		})
 	}
 	this.sortRegByTotCasiToday = function() {
@@ -480,8 +492,8 @@ var handlerPassaggioDati = function() {
 		smMDjson.arrRegioniDivise.sort((a,b) => { // modifiche per Trentino come somma di casi Bolzano e Trento
 			// return a[a.length-1].totale_casi < b[b.length-1].totale_casi;
 			// return 	(a[0] ? a[a.length-1].totale_casi : 0) < (b[0] ? b[b.length-1].totale_casi : 0);
-			return 	(a[0] ? a[a.length-1].totale_casi : tdCasiBolzano + tdCasiTrento) 
-				<	(b[0] ? b[b.length-1].totale_casi : tdCasiBolzano + tdCasiTrento);
+			return 	(b[0] ? b[b.length-1].totale_casi : tdCasiBolzano + tdCasiTrento) - 
+					(a[0] ? a[a.length-1].totale_casi : tdCasiBolzano + tdCasiTrento);
 		})
 	}
 
