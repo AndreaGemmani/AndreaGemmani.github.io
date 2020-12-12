@@ -35,7 +35,7 @@ var loadderDataCov = function() {
 
 	this.dateFileLoad = "20201212";
 	this.pathFolderNoDate = "dataCV/";
-	this.pathFolderWDate = this.pathFolderNoDate + this.dateFileLoad + "/";
+	this.pathFolderWDate = this.pathFolderNoDate;
 
 	// this.pathDatiJSON = this.pathFolderWDate + "dati-json/";
 	this.pathDatiJSON = this.pathFolderWDate;
