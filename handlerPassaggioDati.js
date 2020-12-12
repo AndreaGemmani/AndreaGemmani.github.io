@@ -35,6 +35,12 @@ Modifica: Regione "Emilia Romagna" rinominato in "Emilia-Romagna" in "dati-regio
 
 
 
+
+	// vaffanculo Chrome di merda che non sai neanche riordinare un Array
+	// https://forum.freecodecamp.org/t/the-sort-method-behaves-different-on-different-browsers/237221
+
+
+
 var handlerPassaggioDati = function() {
 
 
@@ -397,7 +403,8 @@ var handlerPassaggioDati = function() {
 
 		smMDjson.arrProvinceDivise.sort((a,b) => {
 			// return a[0].denominazione_provincia > b[0].denominazione_provincia;
-			return a[0].denominazione_provincia - b[0].denominazione_provincia;
+			// return a[0].denominazione_provincia - b[0].denominazione_provincia;
+			return (a[0].denominazione_provincia > b[0].denominazione_provincia) ? 1 : -1;
 		})
 	}
 	this.sortProvByTotCasiToday = function() {
@@ -437,11 +444,10 @@ var handlerPassaggioDati = function() {
 		smMDjson.arrProvinceDivise.sort((a,b) => {
 			if( a[0].denominazione_provincia.includes("In fase") ) return 1;
 			if( a[0].denominazione_provincia.includes("Fuori") ) return 1;
-			if( a[0].denominazione_regione == b[0].denominazione_regione )
-				// return a[0].denominazione_provincia > b[0].denominazione_provincia;
-				return a[0].denominazione_provincia - b[0].denominazione_provincia;
-			// return a[0].denominazione_regione > b[0].denominazione_regione;
-			return a[0].denominazione_regione - b[0].denominazione_regione;
+			if( a[0].denominazione_regione == b[0].denominazione_regione) return (a[0].denominazione_provincia > b[0].denominazione_provincia) ? 1 : -1;
+				// return a[0].denominazione_provincia - b[0].denominazione_provincia;
+			// return a[0].denominazione_regione - b[0].denominazione_regione;
+			return (a[0].denominazione_regione > b[0].denominazione_regione) ? 1 : -1;
 		})
 	}
 
@@ -463,7 +469,8 @@ var handlerPassaggioDati = function() {
 		smMDjson.arrRegioniDivise.sort((a,b) => { // modifiche per Trentino
 			// return a[0].denominazione_regione > b[0].denominazione_regione;
 			// return (a[0] ? a[0].denominazione_regione : "Trentino") > (b[0] ? b[0].denominazione_regione : "Trentino");
-			return (a[0] ? a[0].denominazione_regione : "Trentino") - (b[0] ? b[0].denominazione_regione : "Trentino");
+			// return (a[0] ? a[0].denominazione_regione : "Trentino") - (b[0] ? b[0].denominazione_regione : "Trentino");
+			return ( (a[0] ? a[0].denominazione_regione : "Trentino") > (b[0] ? b[0].denominazione_regione : "Trentino") ) ? 1 : -1;
 		})
 	}
 	this.sortRegByTotCasiToday = function() {
