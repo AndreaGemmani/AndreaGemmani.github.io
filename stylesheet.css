@@ -1,0 +1,32 @@
+.axisSlider {
+  width: 100%;
+  margin: 5.7px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+.axisSlider:focus {
+  outline: none;
+}
+.axisSlider::-webkit-slider-runnable-track {
+  background: #8f8f8f;
+  border: 0.1px solid #010101;
+  border-radius: 20px;
+  width: 100%;
+  height: 4.6px;
+  cursor: pointer;
+}
+.axisSlider::-webkit-slider-thumb {
+  margin-top: -5.8px;
+  width: 8px;
+  height: 16px;
+  background: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.axisSlider:focus::-webkit-slider-runnable-track {
+  background: #949494;
+}
+
+/* from http://danielstern.ca/range.css/?ref=css-tricks#/ */
