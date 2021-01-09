@@ -87,7 +87,8 @@ var loadderDataCov = function() {
 	this.caricaDataAndamentoNazionaleJSON = function() {
 
 		let objDatiJSON = loadder.dataLoadedObj.dati_json;
-		let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-andamento-nazionale.json";
+		// let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-andamento-nazionale.json";
+		let newIndirizzo = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json";
 
 		objDatiJSON.andamento_nazionale = loadJSON(newIndirizzo,loadder.miglioraDatiNazionaliJSON);
 
