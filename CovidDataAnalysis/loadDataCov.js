@@ -107,7 +107,8 @@ var loadderDataCov = function() {
 	this.caricaDataRegioniJSON = function() {
 
 		let objDatiJSON = loadder.dataLoadedObj.dati_json;
-		let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-regioni.json";
+		// let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-regioni.json";
+		let newIndirizzo = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json";
 
 		objDatiJSON.regioni = loadJSON(newIndirizzo,loadder.miglioraRegioniJSON);
 		
@@ -146,6 +147,8 @@ var loadderDataCov = function() {
 
 		let objDatiJSON = loadder.dataLoadedObj.dati_json;
 		let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-province.json";
+		
+		let newIndirizzo = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json";
 
 		objDatiJSON.province = loadJSON(newIndirizzo,loadder.miglioraProvinceJSON);
 		
