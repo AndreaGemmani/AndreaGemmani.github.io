@@ -146,8 +146,7 @@ var loadderDataCov = function() {
 	this.caricaDataProvinceJSON = function() {
 
 		let objDatiJSON = loadder.dataLoadedObj.dati_json;
-		let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-province.json";
-		
+		// let newIndirizzo = loadder.pathDatiJSON + "dpc-covid19-ita-province.json";
 		let newIndirizzo = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json";
 
 		objDatiJSON.province = loadJSON(newIndirizzo,loadder.miglioraProvinceJSON);
