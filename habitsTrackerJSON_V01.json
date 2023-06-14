@@ -1,0 +1,82 @@
+{
+	"zeroDayDate" : "",
+	"fileCreationDate" :"",
+	"suggestedVizDate" : "",
+	"habits" : [
+		{
+			"nomeHabit" : "eat frutta/veggie",
+			"URLsimbolo" : "strawberry.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "walk/exercise",
+			"URLsimbolo" : "gym.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "tidying up",
+			"URLsimbolo" : "broom.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "reading",
+			"URLsimbolo" : "e-learning.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "studying",
+			"URLsimbolo" : "user-robot.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "GraJo",
+			"URLsimbolo" : "book-bookmark.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "planner TD/TM",
+			"URLsimbolo" : "calendar-lines-pen.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "Blender/Unity",
+			"URLsimbolo" : "unity.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "projs",
+			"URLsimbolo" : "bulb.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "wake up",
+			"URLsimbolo" : "alarm-exclamation.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "sleep",
+			"URLsimbolo" : "snooze.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "shower",
+			"URLsimbolo" : "pump-medical.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "teeth",
+			"URLsimbolo" : "tooth.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "barba",
+			"URLsimbolo" : "man.png",
+			"arrDays" : []
+		},
+		{ 
+			"nomeHabit" : "irl social life",
+			"URLsimbolo" : "friends.png",
+			"arrDays" : []
+		}
+	]
+}
